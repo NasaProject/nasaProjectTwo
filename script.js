@@ -16,20 +16,47 @@
 // Create an init method so we can use our application
 // call local methods
 
-
 // created our namespace object 👇👇
-const nasaApp = {}
+const nasaApp = {};
 
 // create a method that will capture the user's selected option value
 
-nasaApp.dropDownMenu = () => {
-    const userSelect = document.getElementById('option').value;
-    console.log(userSelect);
+const optionElement = document.querySelector("#solarSystem");
+
+optionElement.addEventListener("change", function (event) {
+  event.preventDefault();
+  const selectId = document.getElementById("solarSystem");
+  const selectedId = selectId.value;
+  nasaApp.gallery(selectedId)
+});
+
+//create a method that will store our API call 👇👇
+
+const gallery = document.querySelector('ul');
+nasaApp.apiUrl = 'https://images-api.nasa.gov/search?q={q}';
+
+nasaApp.gallery = (select) => {
+    
+    const url = new URL(nasaApp.apiUrl);
+    url.search = new URLSearchParams({
+        q: select,
+        media_type: 'image',
+        
+    })
+
+    fetch(url).then((response) => {
+        return response.json();
+    }).then((jsonResponse) => {
+        console.log(jsonResponse)
+    })
+
+    
 }
 
 // created our init method 🎉
 nasaApp.init = () => {
-    console.log('Good to go');
-}
-// called out init method 
+  console.log("Good to go");
+  nasaApp.gallery();
+};
+// called out init method
 nasaApp.init();
