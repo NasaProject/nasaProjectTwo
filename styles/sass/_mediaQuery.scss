@@ -1,0 +1,18 @@
+@media (max-width: 850px) {
+
+    #gallery {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+    
+    }
+    
+    .photo {
+        width: 45%;
+    
+        img {
+            max-width: 100%;
+        }
+    }
+}
