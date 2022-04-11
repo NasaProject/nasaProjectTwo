@@ -8,83 +8,74 @@ optionElement.addEventListener("change", function (event) {
   event.preventDefault();
   const selectId = document.getElementById("solarSystem");
   const selectedId = selectId.value;
-  nasaApp.unorderedList(selectedId)
+  nasaApp.getImages(selectedId);
 });
 
 // create a method that will store our API call 👇👇
+const getImages = document.querySelector("#gallery");
+nasaApp.apiUrl = "https://images-api.nasa.gov/search?q={q}";
 
-const unorderedList = document.querySelector('ul');
-nasaApp.apiUrl = 'https://images-api.nasa.gov/search?q={q}';
 
-nasaApp.unorderedList = (select) => {
+nasaApp.getImages = async (select) => {
+  const url = new URL(nasaApp.apiUrl);
+  url.search = new URLSearchParams({
+    q: select,
+    media_type: "image",
+    page: 1,
+  });
+  try {
+    const response = await fetch(url);
+    const jsonResponse = await response.json();
     
-    const url = new URL(nasaApp.apiUrl);
-    url.search = new URLSearchParams({
-        q: select,
-        media_type: 'image',
-        page: 1
-    })
-
-    fetch(url).then((response) => {
-        return response.json();
-    }).then((jsonResponse) => {
-      console.log(jsonResponse.collection.items)
-    
-      // clear out the ul 
-      document.querySelector('ul').innerHTML = ''
-      nasaApp.displayImages(jsonResponse.collection.items);
-    })
-}
+    // clear out the gallery
+    document.querySelector("#gallery").innerHTML = "";
+    nasaApp.displayImages(jsonResponse.collection.items);
+  } catch (error) {
+    console.log("oh no, error!", error);
+  }
+};
 
 // function to display the images to our page
 nasaApp.displayImages = (nasaPhotos) => {
   // forEach loop to get each individual image
   nasaPhotos.forEach((item, i) => {
     //hey Alex, here I limited the quantity of images being displayed on our page to 10
-    const limitItems = 9
-    if (i > limitItems) { 
-      return
+    const limitItems = 14;
+    if (i > limitItems) {
+      return;
     }
 
+    const links = item.links[0];
 
-    const links = item.links[0]
-
-    const data = item.data[0]
+    const data = item.data[0];
 
     // create the html for each image that will be displayed
-    const title = document.createElement('h2')
-    title.innerText = data.title
+    const title = document.createElement("h2");
+    title.innerText = data.title;
 
-    const dateCreated = document.createElement('p')
-    dateCreated.innerText = data.date_created
+    const dateCreated = document.createElement("p");
+    dateCreated.innerText = data.date_created;
 
-    const image = document.createElement('img')
-    image.src = links.href
-    image.alt = data.description
+    const image = document.createElement("img");
+    image.src = links.href;
+    image.alt = data.description;
 
     // create a container div
-    const div = document.createElement('div')
-    div.classList.add("wrapper")
+    const div = document.createElement("div");
+    div.classList.add("photo");
 
-    const list = document.createElement('li')
+    div.appendChild(title);
+    div.appendChild(dateCreated);
+    div.appendChild(image);
 
-    const gallery = document.querySelector('#gallery')
-
-    
-    unorderedList.appendChild(list)
-    list.appendChild(title)
-    list.appendChild(dateCreated)
-    list.appendChild(image)
-    div.appendChild(unorderedList)
-    gallery.appendChild(div)
-
-  })
-}
+    document.querySelector("#gallery").appendChild(div);
+  });
+};
 
 // create our init method 🎉
 nasaApp.init = () => {
   console.log("Good to go");
-  nasaApp.unorderedList('');
+  nasaApp.getImages("");
 };
 
 // calling out the init method

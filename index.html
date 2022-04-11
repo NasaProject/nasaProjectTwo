@@ -4,36 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Two</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gugi&family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gugi&family=Lato:wght@100&family=Monda&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Nasa Project</title>
   </head>
   <body>
-    <h1>Our Awesome Project</h1>
+    <main class="wrapper">
+      <h1>Galaxius</h1>
+      <section class="dropdownMenu">
+        <form action="">
+          <label for="solarSystem"
+            >Discover the beauty of our Solar System</label
+          >
+          <select name="solarSystem" id="solarSystem">
+            <option value="earth">Earth</option>
+            <option value="jupiter">Jupiter</option>
+            <option value="mars">Mars</option>
+            <option value="mercury">Mercury</option>
+            <option value="neptune">Neptune</option>
+            <option value="saturn">Saturn</option>
+            <option value="uranus">Uranus</option>
+            <option value="sun">Sun</option>
+            <option value="moon">Moon</option>
+            <option value="galaxies">Galaxies</option>
+          </select>
+        </form>
+      </section>
 
-    <div>
-      <h2>Discover the beauty of our Solar System</h2>
+      <section>
+        <div id="gallery">
+          <!-- API data will load here -->
+        </div>
+      </section>
+    </main>
 
-
-
-      <select name="solarSystem" id="solarSystem">
-        <option value="earth">Earth</option>
-        <option value="jupiter">Jupiter</option>
-        <option value="mars" >Mars</option>
-        <option value="mercury">Mercury</option>
-        <option value="neptune" >Neptune</option>
-        <option value="saturn" >Saturn</option>
-        <option value="uranus">Uranus</option>
-        <option value="sun">Sun</option>
-        <option value="moon">Moon</option>
-        <option value="galaxies">Galaxies</option>
-      </select>
-    </div>
-
-    <section id="gallery">
-      <!-- API data will load here -->
-      <ul>
-
-      </ul>
-    </section>
+    <footer>
+      <p>
+        Created at
+        <a href="https://junocollege.com/">Juno College of Technology</a>
+      </p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
