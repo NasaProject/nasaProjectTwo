@@ -308,7 +308,7 @@ select {
   border-radius: 0.25em;
   -webkit-box-shadow: 0 0 0.5rem 0 #89c1f3;
           box-shadow: 0 0 0.5rem 0 #89c1f3;
-  width: 160px;
+  width: auto;
   outline: none;
   cursor: pointer;
 }
