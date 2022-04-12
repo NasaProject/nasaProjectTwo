@@ -43,6 +43,8 @@ nasaApp.getImages = async (select) => {
 
 // function to display the images to our page
 nasaApp.displayImages = (nasaPhotos) => {
+      // clear out the gallery
+    document.querySelector("#gallery").innerHTML = "";
   // forEach loop to get each individual image
   nasaPhotos.forEach((item, i) => {
     //hey Alex, here I limited the quantity of images being displayed on our page to 10
@@ -61,8 +63,8 @@ nasaApp.displayImages = (nasaPhotos) => {
     
 
     const dateCreated = document.createElement("p");
-    dateCreated.innerText = data.date_created;
-    
+    const formatDateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateCreated.innerText = new Date(data.date_created).toLocaleDateString('en-US', formatDateOptions);
 
     const image = document.createElement("img");
     image.src = links.href;

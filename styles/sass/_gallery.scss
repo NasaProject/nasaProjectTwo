@@ -1,14 +1,16 @@
 #gallery {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
-}
-
-.photo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  padding-bottom: 50px;
+  .photo {
     width: 30%;
-
+    padding: 20px;
     img {
-        max-width: 100%;
+      max-width: 100%;
+      border: solid 5px #fff;
+      border-style: ridge;
     }
+  }
 }

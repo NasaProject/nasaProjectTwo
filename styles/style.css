@@ -142,24 +142,24 @@ select {
 }
 
 button,
-html [type=button],
-[type=reset],
-[type=submit] {
+html [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -186,25 +186,25 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-cancel-button,
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -276,20 +276,132 @@ html {
 }
 
 body {
-  background-color: #001233;
   color: white;
   font-family: "Monda", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownMenu,
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+label,
+select {
+  font-size: 26px;
+  padding-right: 15px;
+}
+
+.dropdownMenu {
+  padding: 30px;
+}
+
+select {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  -webkit-box-shadow: 0 0 0.5rem 0 #89c1f3;
+          box-shadow: 0 0 0.5rem 0 #89c1f3;
+  width: auto;
+  outline: none;
+  cursor: pointer;
 }
 
 h1 {
-  text-align: center;
+  margin-top: 0;
+  padding-top: 100px;
   font-family: "Gugi", cursive;
   font-size: 84px;
   text-transform: uppercase;
-  padding: 15px;
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff, 0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
+}
+
+@-webkit-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+@-webkit-keyframes move-twinkle-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+@keyframes move-twinkle-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+body .animatedBackground {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body .stars,
+body .twinkling,
+body .clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+body .stars {
+  background: black url("./assets/stars.png") repeat top center;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+body .twinkling {
+  background: transparent url("./assets/twinkling.png") repeat top center;
+  z-index: 5;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: move-twinkle-back 200s linear infinite;
+          animation: move-twinkle-back 200s linear infinite;
+}
+
+body .clouds {
+  background: transparent url("./assets/clouds.png");
+  z-index: 10;
+  opacity: 0.4;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: move-clouds-back 200s linear infinite;
+          animation: move-clouds-back 200s linear infinite;
 }
 
 #gallery {
@@ -301,20 +413,39 @@ h1 {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 45px;
+  padding-bottom: 50px;
 }
 
-.photo {
+#gallery .photo {
   width: 30%;
+  padding: 20px;
 }
-.photo img {
+
+#gallery .photo img {
   max-width: 100%;
+  border: solid 5px #fff;
+  border-style: ridge;
 }
 
 footer {
-  background-color: #013a63;
+  background-color: #fff;
+  color: #013a63;
   position: absolute;
   width: 100%;
   text-align: center;
+  font-family: "Gugi", cursive;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+footer a {
+  text-decoration: none;
+  color: #013a63;
+}
+
+footer:hover {
+  font-weight: bolder;
 }
 
 @media (max-width: 850px) {
@@ -328,7 +459,6 @@ footer {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-
   .photo {
     width: 45%;
   }
@@ -336,6 +466,7 @@ footer {
     max-width: 100%;
   }
 }
+
 @media (max-width: 520px) {
   .dropdownMenu {
     text-align: center;
@@ -343,22 +474,21 @@ footer {
   .dropdownMenu #solarSystem {
     margin-top: 20px;
   }
-
   #gallery .photo {
     width: 100%;
   }
   #gallery h2,
-#gallery p {
+  #gallery p {
     text-align: center;
   }
 }
+
 @media (max-width: 466px) {
   h1 {
     font-size: 60px;
   }
-
   #gallery .photo h2,
-#gallery .photo p {
+  #gallery .photo p {
     font-size: 20px;
   }
 }
