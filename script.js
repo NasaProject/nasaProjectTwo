@@ -5,15 +5,15 @@ const nasaApp = {};
 const optionElement = document.querySelector("#solarSystem");
 
 optionElement.addEventListener("change", function (event) {
-  event.preventDefault();
-  const selectId = document.getElementById("solarSystem");
-  const selectedId = selectId.value;
+  console.log(event)
+  
+  const selectedId = optionElement.value;
   nasaApp.getImages(selectedId);
 });
 
 // create a method that will store our API call 👇👇
-const getImages = document.querySelector("#gallery");
-nasaApp.apiUrl = "https://images-api.nasa.gov/search?q={q}";
+const galleryElement = document.querySelector("#gallery");
+nasaApp.apiUrl = "https://images-api.nasa.gov/search";
 
 
 nasaApp.getImages = async (select) => {
@@ -32,9 +32,9 @@ nasaApp.getImages = async (select) => {
     // document.querySelector("h2").innerHTML = "";
     // document.querySelector("p").innerHTML = "";
     // document.querySelector("img").innerHTML = "";
-
-
-    document.querySelector("#gallery").innerHTML = "";
+    
+    
+    galleryElement.innerHTML = "";
     nasaApp.displayImages(jsonResponse.collection.items);
   } catch (error) {
     console.log("oh no, error!", error);
@@ -77,14 +77,14 @@ nasaApp.displayImages = (nasaPhotos) => {
     div.appendChild(dateCreated);
     div.appendChild(image);
 
-    document.querySelector("#gallery").appendChild(div);
+    galleryElement.appendChild(div);
   });
 };
 
 // create our init method 🎉
 nasaApp.init = () => {
-  console.log("Good to go");
-  nasaApp.getImages("");
+  
+  // nasaApp.getImages("");
 };
 
 // calling out the init method
