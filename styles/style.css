@@ -420,7 +420,7 @@ body .clouds {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 45px;
-  padding-bottom: 50px;
+  padding-bottom: 120px;
 }
 
 #gallery .photo {
