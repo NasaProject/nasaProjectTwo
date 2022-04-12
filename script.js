@@ -27,12 +27,7 @@ nasaApp.getImages = async (select) => {
   try {
     const response = await fetch(url);
     const jsonResponse = await response.json();
-    
-    // clear out the gallery
-    // document.querySelector("h2").innerHTML = "";
-    // document.querySelector("p").innerHTML = "";
-    // document.querySelector("img").innerHTML = "";
-    
+
     
     galleryElement.innerHTML = "";
     nasaApp.displayImages(jsonResponse.collection.items);
