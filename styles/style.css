@@ -142,24 +142,24 @@ select {
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -186,25 +186,25 @@ textarea {
   overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -305,8 +305,8 @@ select {
   color: #fff;
   border: none;
   border-radius: 0.25em;
-  -webkit-box-shadow: 0 0 0.5rem 0 #89c1f3;
-          box-shadow: 0 0 0.5rem 0 #89c1f3;
+  -webkit-box-shadow: 0 0 0.5rem 0 rgb(137, 193, 243);
+          box-shadow: 0 0 0.5rem 0 rgb(137, 193, 243);
   width: auto;
   outline: none;
   cursor: pointer;
@@ -339,7 +339,6 @@ h1 {
     background-position: 10000px 0;
   }
 }
-
 @-webkit-keyframes move-twinkle-back {
   from {
     background-position: 0 0;
@@ -348,7 +347,6 @@ h1 {
     background-position: -10000px 5000px;
   }
 }
-
 @keyframes move-twinkle-back {
   from {
     background-position: 0 0;
@@ -357,14 +355,12 @@ h1 {
     background-position: -10000px 5000px;
   }
 }
-
 body .animatedBackground {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
-
 body .stars,
 body .twinkling,
 body .clouds {
@@ -377,14 +373,12 @@ body .clouds {
   height: 100%;
   display: block;
 }
-
 body .stars {
   background: black url("./assets/stars.png") repeat top center;
   z-index: 0;
   width: 100%;
   height: 100vh;
 }
-
 body .twinkling {
   background: transparent url("./assets/twinkling.png") repeat top center;
   z-index: 5;
@@ -393,7 +387,6 @@ body .twinkling {
   -webkit-animation: move-twinkle-back 200s linear infinite;
           animation: move-twinkle-back 200s linear infinite;
 }
-
 body .clouds {
   background: transparent url("./assets/clouds.png");
   z-index: 10;
@@ -416,12 +409,10 @@ body .clouds {
   margin-top: 45px;
   padding-bottom: 50px;
 }
-
 #gallery .photo {
   width: 30%;
   padding: 20px;
 }
-
 #gallery .photo img {
   max-width: 100%;
   border: solid 5px #fff;
@@ -438,14 +429,14 @@ footer {
   font-size: 16px;
   text-transform: uppercase;
 }
-
 footer a {
   text-decoration: none;
   color: #013a63;
 }
-
 footer:hover {
   font-weight: bolder;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
 }
 
 @media (max-width: 850px) {
@@ -459,6 +450,7 @@ footer:hover {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+
   .photo {
     width: 45%;
   }
@@ -466,7 +458,6 @@ footer:hover {
     max-width: 100%;
   }
 }
-
 @media (max-width: 520px) {
   .dropdownMenu {
     text-align: center;
@@ -474,21 +465,22 @@ footer:hover {
   .dropdownMenu #solarSystem {
     margin-top: 20px;
   }
+
   #gallery .photo {
     width: 100%;
   }
   #gallery h2,
-  #gallery p {
+#gallery p {
     text-align: center;
   }
 }
-
 @media (max-width: 466px) {
   h1 {
     font-size: 60px;
   }
+
   #gallery .photo h2,
-  #gallery .photo p {
+#gallery .photo p {
     font-size: 20px;
   }
 }
