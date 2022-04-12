@@ -1,18 +1,47 @@
 // Page styling
 body {
-    background-color: $blue;
-    color: white;
-    font-family: $bodyFont;
-    font-size: 20px;
+  color: white;
+  font-family: $bodyFont;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownMenu,
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+label,
+select {
+  font-size: 26px;
+  padding-right: 15px;
+}
+
+.dropdownMenu {
+  padding: 30px;
+}
+
+select {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.5rem 0 rgb(137, 193, 243);
+  width: auto;
+  outline: none;
+  cursor: pointer;
 }
 
 h1 {
-    text-align: center;
-    font-family: $headingFont;
-    font-size: 84px;
-    text-transform: uppercase;
-    padding: 15px;
-    color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff,
-        0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
+  margin-top: 0;
+  padding-top: 100px;
+  font-family: $headingFont;
+  font-size: 84px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff,
+    0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
 }

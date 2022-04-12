@@ -1,52 +1,47 @@
 @media (max-width: 850px) {
+  #gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-    #gallery {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        
-    
+  .photo {
+    width: 45%;
+    img {
+      max-width: 100%;
     }
-    
-    .photo {
-        width: 45%;
-    
-        img {
-            max-width: 100%;
-        }
-    }
+  }
 }
 
 @media (max-width: 520px) {
-    .dropdownMenu {
-        text-align: center;
-        #solarSystem {
-            margin-top: 20px;
-        }
+  .dropdownMenu {
+    text-align: center;
+    #solarSystem {
+      margin-top: 20px;
     }
-    #gallery {
-        .photo {
-            width: 100%;
-        }
-        h2,
-        p {
-            text-align: center;
-        }
+  }
+  #gallery {
+    .photo {
+      width: 100%;
     }
+    h2,
+    p {
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 466px) {
-    h1 {
-        font-size: 60px;
-    }
+  h1 {
+    font-size: 60px;
+  }
 
-    #gallery {
-        .photo {
-           h2,
-           p {
-               font-size: 20px;
-           } 
-        }
+  #gallery {
+    .photo {
+      h2,
+      p {
+        font-size: 20px;
+      }
     }
+  }
 }
