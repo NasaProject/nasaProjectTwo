@@ -275,11 +275,21 @@ html {
   margin: 0 auto;
 }
 
-footer {
-  background-color: #013a63;
-  position: absolute;
-  width: 100%;
+body {
+  background-color: #001233;
+  color: white;
+  font-family: "Monda", sans-serif;
+  font-size: 20px;
+}
+
+h1 {
   text-align: center;
+  font-family: "Gugi", cursive;
+  font-size: 84px;
+  text-transform: uppercase;
+  padding: 15px;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff, 0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
 }
 
 #gallery {
@@ -300,21 +310,11 @@ footer {
   max-width: 100%;
 }
 
-body {
-  background-color: #001233;
-  color: white;
-  font-family: "Monda", sans-serif;
-  font-size: 20px;
-}
-
-h1 {
+footer {
+  background-color: #013a63;
+  position: absolute;
+  width: 100%;
   text-align: center;
-  font-family: "Gugi", cursive;
-  font-size: 84px;
-  text-transform: uppercase;
-  padding: 15px;
-  color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #5271ff, 0 0 82px #5271ff, 0 0 92px #5271ff, 0 0 102px #5271ff, 0 0 151px #5271ff;
 }
 
 @media (max-width: 850px) {
@@ -334,5 +334,31 @@ h1 {
   }
   .photo img {
     max-width: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .dropdownMenu {
+    text-align: center;
+  }
+  .dropdownMenu #solarSystem {
+    margin-top: 20px;
+  }
+
+  #gallery .photo {
+    width: 100%;
+  }
+  #gallery h2,
+#gallery p {
+    text-align: center;
+  }
+}
+@media (max-width: 466px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  #gallery .photo h2,
+#gallery .photo p {
+    font-size: 20px;
   }
 }

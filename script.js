@@ -22,12 +22,18 @@ nasaApp.getImages = async (select) => {
     q: select,
     media_type: "image",
     page: 1,
+    year_start: '2010'
   });
   try {
     const response = await fetch(url);
     const jsonResponse = await response.json();
     
     // clear out the gallery
+    // document.querySelector("h2").innerHTML = "";
+    // document.querySelector("p").innerHTML = "";
+    // document.querySelector("img").innerHTML = "";
+
+
     document.querySelector("#gallery").innerHTML = "";
     nasaApp.displayImages(jsonResponse.collection.items);
   } catch (error) {
@@ -52,13 +58,16 @@ nasaApp.displayImages = (nasaPhotos) => {
     // create the html for each image that will be displayed
     const title = document.createElement("h2");
     title.innerText = data.title;
+    
 
     const dateCreated = document.createElement("p");
     dateCreated.innerText = data.date_created;
+    
 
     const image = document.createElement("img");
     image.src = links.href;
     image.alt = data.description;
+    
 
     // create a container div
     const div = document.createElement("div");

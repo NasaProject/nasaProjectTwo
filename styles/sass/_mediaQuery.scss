@@ -4,6 +4,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
         
     
     }
@@ -13,6 +14,39 @@
     
         img {
             max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 520px) {
+    .dropdownMenu {
+        text-align: center;
+        #solarSystem {
+            margin-top: 20px;
+        }
+    }
+    #gallery {
+        .photo {
+            width: 100%;
+        }
+        h2,
+        p {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 466px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    #gallery {
+        .photo {
+           h2,
+           p {
+               font-size: 20px;
+           } 
         }
     }
 }
